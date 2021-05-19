@@ -8,9 +8,9 @@ var UserSchema = new mongoose.Schema({
 })
 
 UserSchema.plugin(passportLocalMongoose, {
-	usernameField: 'username'
+	usernameField: ['email']
 })
 
 module.exports = mongoose.model('User', UserSchema)
 
-// Somewhere in this file you can change or add to allow for the user to login with their email address
+

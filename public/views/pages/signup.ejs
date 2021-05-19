@@ -53,10 +53,18 @@
                   <div class="mb-3">
                     <input class="form-control" type="email" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Email address" name="email" required>
                   </div>
-                  <div class="mb-3">
-                    <input class="form-control" type="password" placeholder="Password" name="password" required>
-                  </div>
+                  <div class="mb-3 row">
+                    <div class="col">
+                      <input class="form-control" type="password" placeholder="Password" name="password" required>
+                    </div>
+                    <div class="col">
+                      <input class="form-control" type="password" placeholder="confirm Password" name="password" required>
+                    </div>                    
+                 </div>
                   <!-- Impliment EJS here to add the error message to the screen https://ejs.co/ -->
+                  <% if(locals.errorMessage) { %>
+                    <div class="alert alert-danger" role="alert"><%= errorMessage %></div>
+                    <% } %>               
                   <div class="form-check"><input class="form-check-input" type="checkbox" id="remember-me"
                       name="rememberMe"><label class="form-label" for="remember-me">Remember Me</label></div>
                   <div class="mb-3"><button class="btn btn-primary btn-block mt-3" type="submit"
